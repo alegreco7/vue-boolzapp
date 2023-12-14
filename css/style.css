@@ -3,3 +3,64 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    height: 100vh;
+    background:linear-gradient(0deg, #DEDFDD 85%, #00A884 85%);
+}
+
+/* sezione di sinistra (contatti) */
+
+.profile{
+    background-color: #EAEAEA;
+    padding: 10px;
+}
+.profile img{
+    width: 60px;
+    border-radius: 50%;
+}
+.notice{
+    padding: 10px 20px;
+    background-color: #8EDAFC;
+    height: 80px;
+}
+.contacts{
+    height: 550px;
+    background-color: white;
+    overflow-y: scroll;
+}
+.contact{
+    padding: 10px 20px;
+}
+.contact img{
+    width: 60px;
+    border-radius: 50%;
+}
+.contact-name{
+    margin: 0 10px;
+    font-weight: 500;
+}
+.contact:hover{
+    background-color: #EAEAEA;
+}
+
+/* sezione di destra (chat aperta) */
+
+.chat{
+    display: flex;
+    flex-direction: column;
+    background-image: url(../img/mine.jpg);
+    height: 100%;
+    padding: 50px;
+}
+.message{
+    padding: 5px 10px;
+    max-width: 400px;
+    border-radius: 10px;
+}
+.message-my{
+    align-self: flex-end;
+    background-color: #fff;
+}
+.message-yours{
+    background-color: #D9FDD3;
+}
