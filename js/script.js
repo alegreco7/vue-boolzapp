@@ -2,6 +2,10 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
+            search: '',
+            empty_chat: true,
+            newText: '',
+            currentContact: { },
             contacts: [
                 {
                     name: 'Michele',
@@ -165,7 +169,40 @@ createApp({
                     ],
                 }
             ]
-
+            
+        }
+    },
+    methods: {
+        openContact(i){
+            this.empty_chat = false;
+            this.currentContact = this.contacts[i];
+        },
+        sendNewMessage(){
+            let newMessage = this.newText;
+            let obj = {
+                date : 'oggi (prova)',
+                message : newMessage,
+                status: 'sent'
+            }
+            let risposta = {
+                date : 'oggi (prova)',
+                message : 'OK',
+                status: 'received'
+            }
+            this.currentContact.messages.push(obj);
+            setTimeout(()=> {
+                // code to be executed repeatedly
+                this.currentContact.messages.push(risposta);
+              }, 1000);
+        },
+        searchContact(){
+            this.contacts.forEach(element => {
+                if (element.name.toLowerCase().includes(this.search.toLowerCase())) {
+                    element.visible = true;
+                }else{
+                    element.visible = false;
+                }
+            });
         }
     }
 }).mount('#app');

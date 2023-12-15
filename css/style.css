@@ -5,12 +5,17 @@
 }
 body{
     height: 100vh;
-    background:linear-gradient(0deg, #DEDFDD 85%, #00A884 85%);
+    background:linear-gradient(0deg, #DEDFDD 90vh, #00A884 90vh);
 }
 
-/* sezione di sinistra (contatti) */
-
+/* sezione di sinistra (contatti e profilo utente)*/
+.interface{
+    height: 800px;
+}
 .profile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #EAEAEA;
     padding: 10px;
 }
@@ -23,10 +28,15 @@ body{
     background-color: #8EDAFC;
     height: 80px;
 }
+.search{
+    height: 50px;
+    padding: 5px;
+    background-color: #fff;
+}
 .contacts{
-    height: 550px;
+    height: calc(100% - 210px);
     background-color: white;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 .contact{
     padding: 10px 20px;
@@ -42,17 +52,20 @@ body{
 .contact:hover{
     background-color: #EAEAEA;
 }
-
 /* sezione di destra (chat aperta) */
-
+.bg-chat{
+    height: 100%;
+    background-image: url(../img/mine.jpg);
+}
 .chat{
     display: flex;
     flex-direction: column;
-    background-image: url(../img/mine.jpg);
-    height: 100%;
     padding: 50px;
+    overflow-y: auto;
+    height: calc(100% - 130px);
 }
 .message{
+    margin: 2px 0;
     padding: 5px 10px;
     max-width: 400px;
     border-radius: 10px;
@@ -63,4 +76,17 @@ body{
 }
 .message-yours{
     background-color: #D9FDD3;
+}
+.send-message{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background-color: #F0F2F5;
+    height: 50px;
+}
+.icons i{
+    margin: 0 10px;
+    font-size: 25px;
+    color: gray;
 }
